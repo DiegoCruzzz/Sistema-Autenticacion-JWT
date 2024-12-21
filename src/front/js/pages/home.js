@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -15,6 +16,13 @@ export const Home = () => {
 			<div className="alert alert-info">
 				{store.message || "Loading message from the backend (make sure your python backend is running)..."}
 			</div>
+			<Link to='/login'>
+				<button type="button" class="btn btn-primary">Iniciar Sesion</button>
+			</Link>
+			<Link to='/singup'>
+				<button type="button" class="btn btn-success">Crear usuario</button>
+			</Link>
+			
 			<p>
 				This boilerplate comes with lots of documentation:{" "}
 				<a href="https://start.4geeksacademy.com/starters/react-flask">
